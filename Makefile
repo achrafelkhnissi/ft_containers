@@ -1,4 +1,6 @@
 NAME		= ft_containers
+LIB_DIR		= lib
+LIB         = $(LIB_DIR)libft.a
 
 CC			= c++
 FSANITIZE	= -fsanitize=address
@@ -18,9 +20,9 @@ TESTER_SRC	= $(VEC_TEST) $(STACK_TEST) $(MAP_TEST) $(SET_TEST)
 
 # Vector
 VECTOR		= containers/vector
-VECTOR_SRC	=
+VECTOR_SRC	= $(addprefix $(VECTOR)/, vector.cpp)
 VECTOR_INC	= -I $(VECTOR)
-VECTOR_HEADER = $(VECTOR)/vector.hpp
+VECTOR_HEADER = $(addprefix $(VECTOR)/, vector.hpp iterator.hpp const_iterator.hpp reverse_iterator.hpp const_reverse_iterator.hpp)
 VEC_OUT		= $(TESTER)/vector.out
 
 # Stack
@@ -44,10 +46,19 @@ SET_INC		= -I $(SET)
 SET_HEADER	= $(SET)/set.hpp
 SET_OUT		= $(TESTER)/set.out
 
+# Utils
+UTILS		= utils
+UTILS_SRC	= $(addprefix $(UTILS)/, ) # utils.cpp
+UTILS_INC	= -I $(UTILS)
+UTILS_HEADERS = $(addprefix $(UTILS)/, enable_if.hpp lexicographical_compare.hpp is_integral.hpp)
 
-INCLUDES  = $(TESTER_INC) $(VECTOR_INC) $(STACK_INC) $(MAP_INC) $(SET_INC)
-SOURCES   = main.cpp $(TESTER_SRC) $(VECTOR_SRC) $(STACK_SRC) $(MAP_SRC) $(SET_SRC)
-HEADERS   = $(TESTER_HEADER) $(VECTOR_HEADER) $(STACK_HEADER) $(MAP_HEADER) $(SET_HEADER)
+# Iterator traits
+ITERATOR_TRAITS_INC	= -I ./containers
+ITERATOR_TRAITS	= ./containers/iterator_traits.hpp
+
+INCLUDES  = $(TESTER_INC) $(VECTOR_INC) $(STACK_INC) $(MAP_INC) $(SET_INC) $(UTILS_INC) $(ITERATOR_TRAITS_INC)
+SOURCES   = main.cpp $(TESTER_SRC) $(VECTOR_SRC) $(STACK_SRC) $(MAP_SRC) $(SET_SRC) $(UTILS_SRC)
+HEADERS   = $(TESTER_HEADER) $(VECTOR_HEADER) $(STACK_HEADER) $(MAP_HEADER) $(SET_HEADER) $(UTILS_HEADERS) $(ITERATOR_TRAITS)
 
 OBJ			= $(SOURCES:%.cpp=$(OBJDIR)/%.o)
 
@@ -92,12 +103,17 @@ $(OBJDIR)/%.o: %.cpp $(HEADERS)
 	@printf "${CURSIVE}${GRAY}	- Making object file: ${BOLD}${GREEN}%-20s ${RESET}\r" $(notdir $@)
 	@$(CC) $(INCLUDES) $(CXXFLAGS) $(OPTS) -c $< -o $@
 
+$(LIB): $(OBJ)
+	@printf "${INFO} - Making ${BOLD}${UNDERLINE}${WHITE}libft${RESET}...\n"
+	@mkdir -p $(dir $@)
+	@ar rc $(LIB) $(OBJ)
+
 clean:
 	@$(RM) $(OBJDIR) $(OBJ)
 	@printf "\n${INFO} - Object files ${BOLD}${UNDERLINE}${WHITE}removed${RESET}.\n"
 
 fclean: clean
-	@$(RM) $(NAME) $(VEC_OUT) $(STACK_OUT) $(MAP_OUT) $(SET_OUT)
+	@$(RM) $(NAME) $(VEC_OUT) $(STACK_OUT) $(MAP_OUT) $(SET_OUT) $(LIB_DIR)
 	@printf "${INFO} - Executable [${BOLD}${UNDERLINE}${RED}${NAME}${RESET}] removed.$(RESET)\n\n"
 
 re: fclean all

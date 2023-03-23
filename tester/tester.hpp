@@ -7,7 +7,7 @@
 # include <string>
 # include <fstream>
 
-//#include "vector.hpp"
+#include "vector.hpp"
 
 #include <vector>
 #include <iostream>
@@ -58,7 +58,7 @@ bool printBoolResult(std::fstream& fs, bool stl_bool, bool ft_bool)
 }
 */
 
-//void test_vector();
+void test_vector();
 // void test_list();
 // void test_map();
 //void test_stack();

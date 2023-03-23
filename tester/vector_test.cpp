@@ -5,7 +5,6 @@
 
 # include "tester.hpp"
 
-/*
 template <class T>
 std::string equalContent(
 	const std::vector<T> & stl_vector,
@@ -171,20 +170,21 @@ void test_vector()
 	}
 
 	// Fill constructor sized
-	{
-		std::vector<int> stl_fill_vector_sized(19);
-		ft::vector<int> ft_fill_vector_sized(19);
-
-		fs.open("./tester/vectors_output/constructor_fill_sized", std::fstream::in | std::fstream::out | std::fstream::trunc);
-		std::cout << ((printVectorAttributes(fs, stl_fill_vector_sized, ft_fill_vector_sized) == true) ? OK : NOP);
-		fs << "\nCode executed:\n";
-		fs << "¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯\n";
-		fs << "ft::vector<int> ft_fill_vector_sized(19);\n";
-		fs << "\nCompared with:\n";
-		fs << "¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯\n";
-		fs << "std::vector<int> stl_fill_vector_sized(19);\n";
-		fs.close();
-	}
+//	{
+//		std::vector<int> stl_fill_vector_sized(19);
+//		ft::vector<int> ft_fill_vector_sized(19);
+//
+//		fs.open("./tester/vectors_output/constructor_fill_sized", std::fstream::in | std::fstream::out | std::fstream::trunc);
+//		std::cout << ((printVectorAttributes(fs, stl_fill_vector_sized, ft_fill_vector_sized) == true) ? OK : NOP);
+//		fs << "\nCode executed:\n";
+//		fs << "¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯\n";
+//		fs << "ft::vector<int> ft_fill_vector_sized(19);\n";
+//		fs << "\nCompared with:\n";
+//		fs << "¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯\n";
+//		fs << "std::vector<int> stl_fill_vector_sized(19);\n";
+//		fs.close();
+//	}
+    /*
 
 	// Fill constructor sized & valued
 	{
@@ -1949,5 +1949,6 @@ void test_vector()
 		std::cout << "\n";
 	}
 
-}
 */
+
+}

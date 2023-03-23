@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include "vector.hpp"
+#include "tester.hpp"
 
 /*
  * TODO:
@@ -33,14 +34,9 @@ bool printBoolResult(std::fstream& fs, bool stl_bool, bool ft_bool)
 int main() {
 
 #if defined(VECTOR) || defined(ALL)
-//	test_vector();
-    std::vector<int> a;
-    std::vector<int>::const_iterator i;
+    test_vector();
+    std::cout << std::endl;
 
-    i = a.begin();
-	std::cout << "Vector" << std::endl;
-
-//	std::cout << *v.end() << std::endl;
 #elif defined(STACK) || defined(ALL)
 //	test_stack();
 	std::cout << std::endl;
