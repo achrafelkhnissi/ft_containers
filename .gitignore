@@ -36,3 +36,4 @@
 *.idea
 ft_containers_old
 ft_containers
+tester/*_output
