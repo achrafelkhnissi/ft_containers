@@ -39,6 +39,13 @@ MAP_INC		= -I $(MAP)
 MAP_HEADER	= $(MAP)/map.hpp
 MAP_OUT		= $(TESTER)/maps_output
 
+# red black tree
+RBTREE		= rbtree
+RBTREE_SRC	= $(addprefix $(RBTREE)/, )
+RBTREE_INC	= -I $(RBTREE)
+RBTREE_HEADER = $(addprefix $(RBTREE)/, rbtree.hpp, rbtree_node.hpp, rbtree_iterator.hpp, rbtree_const_iterator.hpp \
+		rbtree_reverse_iterator.hpp, rbtree_const_reverse_iterator.hpp)
+
 # Set
 SET			= containers/set
 SET_SRC		=
