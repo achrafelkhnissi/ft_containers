@@ -3,7 +3,7 @@ LIB_DIR		= lib
 LIB         = $(LIB_DIR)libft.a
 
 CC			= c++
-FSANITIZE	= -fsanitize=address
+FSANITIZE	= -fsanitize=address -g
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 ${FSANITIZE}
 RM			= rm -rf
 
@@ -20,7 +20,7 @@ TESTER_SRC	= $(VEC_TEST) $(STACK_TEST) $(MAP_TEST) $(SET_TEST)
 
 # Vector
 VECTOR		= containers/vector
-VECTOR_SRC	= $(addprefix $(VECTOR)/, vector.cpp)
+VECTOR_SRC	= $(addprefix $(VECTOR)/, )
 VECTOR_INC	= -I $(VECTOR)
 VECTOR_HEADER = $(addprefix $(VECTOR)/, vector.hpp iterator.hpp const_iterator.hpp reverse_iterator.hpp const_reverse_iterator.hpp)
 VEC_OUT		= $(TESTER)/vector.out
