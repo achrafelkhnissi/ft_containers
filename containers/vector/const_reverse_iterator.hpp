@@ -7,25 +7,25 @@
 namespace ft
 {
 
-    template<class T>
+    template<class Iterator>
     class const_reverse_iterator
     {
     public:
-        typedef typename ft::iterator_traits<T *>::value_type value_type;
-        typedef typename ft::iterator_traits<T *>::pointer pointer;
-        typedef typename ft::iterator_traits<T *>::reference reference;
-        typedef typename ft::iterator_traits<T *>::difference_type difference_type;
-        typedef typename ft::iterator_traits<T *>::iterator_category iterator_category;
+        typedef typename ft::iterator_traits<Iterator>::value_type value_type;
+        typedef typename ft::iterator_traits<Iterator>::pointer pointer;
+        typedef typename ft::iterator_traits<Iterator>::reference reference;
+        typedef typename ft::iterator_traits<Iterator>::difference_type difference_type;
+        typedef typename ft::iterator_traits<Iterator>::iterator_category iterator_category;
 
     private:
-        pointer _ptr;
+        Iterator _ptr;
 
     public:
 
         /* ------------------------- CONSTRUCTORS ------------------------- */
         explicit const_reverse_iterator() : _ptr(nullptr) {}
 
-        explicit const_reverse_iterator(pointer ptr) : _ptr(ptr) {}
+        explicit const_reverse_iterator(Iterator ptr) : _ptr(ptr) {}
 
         /* ------------------------- COPY CONSTRUCTOR ------------------------- */
         const_reverse_iterator(const const_reverse_iterator &other) : _ptr(other._ptr) {}
