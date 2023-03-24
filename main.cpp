@@ -1,7 +1,5 @@
 #include <iostream>
-#include <fstream>
 #include <vector>
-#include "vector.hpp"
 #include "tester.hpp"
 
 /*
@@ -14,14 +12,6 @@
  *
  */
 
-#define SIZE 5
-
-/* TEST MACROS */
-//#define ALL
-#define VECTOR
-//#define STACK
-//#define MAP
-
 bool printBoolResult(std::fstream& fs, bool stl_bool, bool ft_bool)
 {
     fs << "\nBool result : \n";
@@ -33,19 +23,11 @@ bool printBoolResult(std::fstream& fs, bool stl_bool, bool ft_bool)
 
 int main() {
 
-#if defined(VECTOR) || defined(ALL)
     test_vector();
     std::cout << std::endl;
 
-#elif defined(STACK) || defined(ALL)
-//	test_stack();
+	test_stack();
 	std::cout << std::endl;
-#elif defined(MAP) || defined(ALL)
-//    test_map();
-
-#else
-
-#endif
 
 	return 0;
 }
