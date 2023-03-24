@@ -23,28 +23,28 @@ VECTOR		= containers/vector
 VECTOR_SRC	= $(addprefix $(VECTOR)/, )
 VECTOR_INC	= -I $(VECTOR)
 VECTOR_HEADER = $(addprefix $(VECTOR)/, vector.hpp iterator.hpp const_iterator.hpp reverse_iterator.hpp const_reverse_iterator.hpp)
-VEC_OUT		= $(TESTER)/vector.out
+VEC_OUT		= $(TESTER)/vectors_output
 
 # Stack
 STACK		= containers/stack
 STACK_SRC	=
 STACK_INC	= -I $(STACK)
 STACK_HEADER = $(STACK)/stack.hpp
-STACK_OUT	= $(TESTER)/stack.out
+STACK_OUT	= $(TESTER)/stacks_output
 
 # Map
 MAP			= containers/map
 MAP_SRC		=
 MAP_INC		= -I $(MAP)
 MAP_HEADER	= $(MAP)/map.hpp
-MAP_OUT		= $(TESTER)/map.out
+MAP_OUT		= $(TESTER)/maps_output
 
 # Set
 SET			= containers/set
 SET_SRC		=
 SET_INC		= -I $(SET)
 SET_HEADER	= $(SET)/set.hpp
-SET_OUT		= $(TESTER)/set.out
+SET_OUT		= $(TESTER)/sets_output
 
 # Utils
 UTILS		= utils
