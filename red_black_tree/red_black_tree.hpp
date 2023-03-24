@@ -1,0 +1,8 @@
+//
+// Created by Achraf El khnissi on 3/24/23.
+//
+
+#ifndef FT_CONTAINERS_RED_BLACK_TREE_HPP
+#define FT_CONTAINERS_RED_BLACK_TREE_HPP
+
+#endif //FT_CONTAINERS_RED_BLACK_TREE_HPP
