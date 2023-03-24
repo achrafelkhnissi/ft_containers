@@ -4,6 +4,9 @@
 #include <iostream>
 #include "iterator_traits.hpp"
 
+// todo: rename to rbtree and rbtree_node;
+// todo: put rbtree_node in rbtree_node.hpp
+
 namespace ft
 {
     enum color {RED, BLACK};
