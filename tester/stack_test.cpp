@@ -1,6 +1,5 @@
 # include "tester.hpp"
 
-/*
 template <class T>
 std::string equalContent(
     std::stack<T> stl_stack,
@@ -98,7 +97,7 @@ void test_stack()
     std::fstream fs;
 
     // Member functions
-    std::cout << "Member Functions\t: " ;
+    std::cout << "\t- Member Functions\t: " ;
 
     // Default Constructor
     {
@@ -284,7 +283,7 @@ void test_stack()
     }
 
     std::cout << std::endl;
-    std::cout << "Non-member Overloads\t: ";
+    std::cout << "\t- Non-member Overloads\t: ";
 
     // RL = relational operator
 
@@ -852,4 +851,3 @@ void test_stack()
 
     std::cout << std::endl;
 }
-*/
